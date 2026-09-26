@@ -26,7 +26,7 @@ Use this flow when the user asks to start or continue learning:
    - 60 分钟代码追踪或实验
    - 20 分钟练习
    - 10 分钟总结
-4. For each important concept, explain the problem, then show a short concrete example or trace, then explain pi's solution.
+4. Focus on agent design, not pi usage. For each important concept, explain the design problem, show a short concrete example or trace, explain pi's solution, compare trade-offs and alternatives, and ask how the XML Agent should decide.
 5. Link files and symbols with absolute Markdown paths.
 6. Give 3 to 5 checkpoint questions. Do not answer them unless the user asks.
 7. Do not update the progress file while only teaching.
@@ -43,9 +43,10 @@ Use this flow when the user says the current day is finished:
    - `最近完成`: the completed day and output
    - `下一步`: the next unchecked task
    - `阻塞问题`: user-reported blockers, otherwise `无`
-4. Append one row to `学习日志`. Use the current local date, the completed day, what the user completed, their questions or `无`, and the next step. Remove the empty placeholder row only after the first real entry is added.
-5. Do not change planned tasks unless the user asks.
-6. Edit only `learning/pi-learning-plan.md`. Do not commit or push unless the user asks.
-7. Show a concise summary of the progress change.
+4. If the user provides a design decision, append it to `设计决策记录` using the template in the file. Do not invent decisions the user did not make.
+5. Append one row to `学习日志`. Use the current local date, the completed day, what the user completed, their questions or `无`, and the next step. Remove the empty placeholder row only after the first real entry is added.
+6. Do not change planned tasks unless the user asks.
+7. Edit only `learning/pi-learning-plan.md`. Do not commit or push unless the user asks.
+8. Show a concise summary of the progress change.
 
 If the user says a day is partly done, do not check it. Record the completed part in `最近完成` and the remaining part in `下一步`.
